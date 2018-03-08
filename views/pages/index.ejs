@@ -1,0 +1,44 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body class="container">
+
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Ejs</h1>
+            <h2>
+                <%= intro %>
+            </h2>
+            <p>Quelques idées de cadeaux trouvées sur
+                <a href="http://www.ouakamlerouge.com">Ouakamlerouge.com</a>
+            </p>
+            <ul>
+                <% noeuds.forEach(function(noeud) { %>
+                    <li>
+                        <a href="https://www.ouakamlerouge.com/produit/<%= noeud.url %>">
+                            <%= noeud.nom %>
+                        </a> -
+                        <%= noeud.prix %> €
+                    </li>
+                    <% }); %>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+
+</body>
+
+</html>
